@@ -15,28 +15,48 @@ class Game
 
 	def start_game
 		pos = 0
+		life = 100
 
-		while pos < 6
-			puts "You are in room #{@list_of_rooms[pos].name}. Which way would you like to go?(n,s,e,w)"
+		while life >= 0
+			puts "You are in room #{@list_of_rooms[pos].name}"  
+			
+			puts @list_of_rooms[pos].deathtrap
 			user_input = gets.chomp
-			if user_input == @list_of_rooms[pos].exit
-				pos +=1
-			elsif user_input ==@list_of_rooms[pos].mistep
-				puts @list_of_rooms[pos].deathtrap
+			
+			if user_input == @list_of_rooms[pos].liveanswer
+				puts @list_of_rooms[pos].deathtrap3
+				puts "which way do you want to go [n,s,e,w]"
 				user_input = gets.chomp
-				if user_input == "yes"
-					#left off here
+
+					while user_input != @list_of_rooms[pos].exit
+						puts "try another way"
+						puts "which way do you want to go [n,s,e,w]"
+						user_input = gets.chomp
+					end
+
+					if user_input == @list_of_rooms[pos].exit
+						pos += 1
+					end
+							
+				elsif user_input == @list_of_rooms[pos].dieanswer
 					puts @list_of_rooms[pos].deathtrap2
-						if ((@list_of_rooms[pos].name % 2) != 0)
-							puts "game over"
-							pos +=7
-						end
-				elsif user_input =="no"
-					puts @list_of_rooms[pos].deathtrap3		
-				end
-		
-			else 
-				puts "That didn't work"
+					life -= 50	
+					puts "you have #{life} health"
+					if life <= 0
+						puts "game over"
+						abort
+					end
+					puts "which way do you want to go [n,s,e,w]"
+					user_input = gets.chomp
+					while user_input != @list_of_rooms[pos].exit
+						puts "try another way"
+						puts "which way do you want to go [n,s,e,w]"
+						user_input = gets.chomp
+					end
+
+					if user_input == @list_of_rooms[pos].exit
+						pos += 1
+					end	
 			end
 		end
 	end
