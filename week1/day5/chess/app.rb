@@ -4,6 +4,9 @@ require_relative("lib/pieces/rook.rb")
 require_relative("lib/pieces/king.rb")
 require_relative("lib/pieces/bishop.rb")
 require_relative("lib/pieces/knight.rb")
+require_relative("lib/pieces/queen.rb")
+require_relative("lib/pieces/pawn.rb")
+
 
 
 # /---------------------------------------------------------
@@ -74,11 +77,30 @@ require_relative("lib/pieces/knight.rb")
 
 #----------------------------- knight
 
-white_knight_right = Knight.new(2,1,"white")
-p white_knight_right.can_move?(3,3) == "yes"
-p white_knight_right.can_move?(4,1) =="no"
+# white_knight_right = Knight.new(2,1,"white")
+# p white_knight_right.can_move?(3,3) == "yes"
+# p white_knight_right.can_move?(4,1) =="no"
 
+#-----------------------------------------
 
+# white_queen = Queen.new(4,1,"white")
+# p white_queen.can_move?(8,5) == "yes"
+
+# p white_queen.can_move?(5,3) == "no"
+
+#__________________________________________ pawn
+# black_pawn = Pawn.new(1,2,"black")
+# p black_pawn.can_move?(1,5) == "no"
+# p black_pawn.can_move?(1,5) == "no"
+
+black_pawn = Pawn.new(1,2,"black")
+p black_pawn.can_move?(1,3) == "yes"
+p black_pawn.can_move?(1,4) == "yes"
+p black_pawn.can_move?(1,5) == "no"
+p black_pawn.can_move?(1,1) == "no"
+
+white_pawn = Pawn.new(1,5,"white")
+p white_pawn.can_move?(1,3) == "no"
 
 
 
