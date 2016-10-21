@@ -1,5 +1,7 @@
 class King
 
+	attr_accessor(:x,:y)
+
 	def initialize(x,y,color)
 		@x = x
 		@y = y
@@ -11,7 +13,7 @@ class King
 		if (@x - dest_x).abs == 1 || (@y - dest_y).abs == 1
 		return "yes" 
 		else
-			return "no"
+			retutrn "no"
 		end
 	end
 

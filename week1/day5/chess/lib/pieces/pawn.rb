@@ -1,5 +1,7 @@
 class Pawn
 
+	attr_accessor(:x,:y)
+
 	def initialize(x,y,color)
 		@x = x
 		@y = y
@@ -12,7 +14,7 @@ class Pawn
 
 		if @color == "black"
 
-			if @y - dest_y > 0
+			if @y - dest_y < 0
 				return "no"
 
 			elsif @num_moves == 0 && @x.abs == dest_x.abs && (@y - dest_y).abs == 2
@@ -32,7 +34,7 @@ class Pawn
 
 		if @color == "white"
 
-			if @y - dest_y < 0
+			if @y - dest_y > 0
 				return "no"
 
 			elsif @num_moves == 0 && @x.abs == dest_x.abs && (@y - dest_y).abs == 2
