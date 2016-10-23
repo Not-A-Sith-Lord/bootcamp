@@ -1,11 +1,12 @@
 class Bishop
 
-	attr_accessor(:x,:y)
+	attr_accessor(:x,:y,:color,:name)
 
-	def initialize(x,y,color)
+	def initialize(x,y,color,name)
 		@x = x
 		@y = y
 		@color = color
+		@name = name
 	end
 
 	def can_move?(dest_x,dest_y)
