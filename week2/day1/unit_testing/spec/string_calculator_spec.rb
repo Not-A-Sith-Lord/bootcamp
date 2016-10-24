@@ -3,7 +3,11 @@ require_relative("../lib/string_calculator.rb")
 RSpec.describe StringCalculator do  
 	describe "#add" do
 
-		the_calc = StringCalculator.new
+		# the_calc = StringCalculator.new
+
+		let :the_calc do
+			StringCalculator.new
+		end
 
 		it "adds to numbers separated by commas" do
 			
