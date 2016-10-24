@@ -33,17 +33,24 @@ game_board = Board.new
 # p game_board.board_can_move?(4,1,3,2) == "yes"
 # p game_board.board_can_move?(4,1,5,3) == "no"
 
-# black_king = King.new(5,1,"black","black_king")
-# game_board.add_piece(black_king)
-# p game_board.board_can_move?(5,1,6,1) == "yes"
-# p game_board.board_can_move?(5,1,4,1) == "yes"
-# p game_board.board_can_move?(5,1,5,2) == "yes"
-# p game_board.board_can_move?(5,1,6,3) == "no"
+black_king = King.new(5,1,"black","black_king")
+game_board.add_piece(black_king)
+p game_board.board_can_move?(5,1,6,1) == "yes"
+p game_board.board_can_move?(5,1,4,1) == "yes"
+p game_board.board_can_move?(5,1,5,2) == "yes"
+p game_board.board_can_move?(5,1,3,1) == "no"
+p game_board.board_can_move?(5,1,6,3) == "no"
+p game_board.board_can_move?(5,1,5,4) == "no"
 
-black_pawn = Pawn.new(1,2,"black","black_pawn")
-game_board.add_piece(black_pawn)
-p game_board.board_can_move?(1,2,1,4) == "yes"
-p game_board.board_can_move?(1,2,1,5) == "no"
+
+
+
+
+
+# black_pawn = Pawn.new(1,2,"black","black_pawn")
+# game_board.add_piece(black_pawn)
+# p game_board.board_can_move?(1,2,1,4) == "yes"
+# p game_board.board_can_move?(1,2,1,5) == "no"
 
 
 

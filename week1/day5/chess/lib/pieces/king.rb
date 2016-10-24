@@ -11,10 +11,10 @@ class King
 
 	def can_move?(dest_x,dest_y)
 
-		if (@x - dest_x).abs == 1 || (@y - dest_y).abs == 1
+		if (@x - dest_x).abs <= 1 && (@y - dest_y).abs <= 1
 		return "yes" 
 		else
-			retutrn "no"
+			return "no"
 		end
 	end
 
