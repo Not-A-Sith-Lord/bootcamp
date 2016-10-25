@@ -1,0 +1,40 @@
+
+<link rel = "stylesheet" type="text/css" href="/public.css">
+
+<h1> My way! </h1>
+
+<h2> Home page </h2>
+
+<ul>
+
+	<li>
+		<a href= "/hi"> Hello World </a>
+	</li>
+
+	<li>
+		<a href= "/about"> About me </a>
+	</li>
+
+	<li>
+		<a href= "/best_pizza"> Best Pizza </a>
+	</li>
+
+</ul>
+
+<% if Date.today.tuesday?%>
+	<p> Today is tuesday</p>
+<% end %>
+
+<% if Date.today.monday?%>
+	<p> Today is monday</p>
+		<%else%>
+		<p> today is not monday </p>
+<% end %>
+
+<%=Time.now%>
+
+<img src="/giphy.gif">
+
+
+
+
