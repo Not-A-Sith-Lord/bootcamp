@@ -8,17 +8,21 @@ require "sinatra"
 </head>
 <body>
 
-  <h1>Add</h1>
+  <h1>Calculate</h1>
 
-  		<form action="/calculate_add" method="POST">
+  		<form action="/calculate" method="POST">
 
   		<input type="number" name = "number1" placeholder="1nd number"> +
  		<input type="number" name ="number2" placeholder="2nd number">
- 		<button type="submit" name="button" value="add">Calculate</button>
+
+ 		<button type="submit" name="button" value="add">Add</button>
+ 		<button type="submit" name="button" value="subtract">Subtract</button>
+ 		<button type="submit" name="button" value="multiply">Multipy</button>
+ 		<button type="submit" name="button" value="divide">Divide</button>
 
  		</form>
 
-   <h1>Subtract</h1>
+   <!-- <h1>Subtract</h1>
 
   		<form action="/calculate_subtract" method="POST">
 
@@ -46,7 +50,7 @@ require "sinatra"
  		<input type="number" name ="number2" placeholder="2nd number">
  		<button type="submit" name="button" value="divide">Calculate</button>
 
- 		</form>
+ 		</form> -->
 
 </body>
 </html>
