@@ -1,0 +1,22 @@
+<link rel = "stylesheet" type="text/css" href="/public.css">
+
+
+<h1> My way </h1>
+
+<h2> best pizza </h2>
+
+<p> ingredients of a great pizza </p>
+
+<ul>
+
+	<%@toppings.each do |my_topping|%>
+	<li>
+		<%= my_topping%>
+	</li>
+	<%end%>
+</ul>
+
+<a href="/"> Home </a>
+
+
+
