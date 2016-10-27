@@ -2,5 +2,20 @@
 
 <a href="/new_task"> new task </a>
 
+</br>
 
-<p> <%=@shit%>  </p>
+
+<%@alltasks.each do |task|%>
+
+
+
+<p> id#<%=task.id%>  <%= task.content%>  
+
+	<form action="/complete" method="POST"> 
+	<button type="submit" name="complete" value="<%=task.id%>">Complete Task<%=task.id%></button>
+	</form>
+
+</p>
+	
+
+<%end%>

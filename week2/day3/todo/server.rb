@@ -6,6 +6,7 @@ require_relative("lib/TodoList.rb")
 
 #-----------------------------------
 
+todo_list = TodoList.new
 
 
 get "/home" do
@@ -13,7 +14,7 @@ get "/home" do
 end
 
 get "/task_index" do
-
+	@alltasks = todo_list.tasks
 	erb(:task_index)
 end
 
@@ -23,9 +24,13 @@ get "/new_task" do
 end
 
 post "/create_task" do
-	todo_list = TodoList.new
 	@bullshit = Task.new(params[:newtask])
 	todo_list.add_task(@bullshit)
+	redirect "/task_index"
+end
+
+post "/complete" do
+	todo_list.delete_task(params[:complete].to_i)
 	redirect "/task_index"
 end
 

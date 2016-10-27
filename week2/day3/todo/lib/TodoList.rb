@@ -25,7 +25,7 @@ class TodoList
 		if @tasks[idnum] == nil
 			nil
 		else
-		puts @tasks[idnum].content
+		@tasks[idnum].content
 		end
 	end
 end
