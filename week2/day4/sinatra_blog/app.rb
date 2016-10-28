@@ -22,3 +22,9 @@ get "/" do
 	@posts = blog.latest_posts
 	erb(:home)
 end
+
+get "/post_details/:id" do
+	id = params[:id].to_i
+	@post = blog.posts[id]
+	erb(:post_details)
+end

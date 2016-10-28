@@ -17,5 +17,4 @@ class Blog
 			b.date <=> a.date
 		end
 	end
-
 end

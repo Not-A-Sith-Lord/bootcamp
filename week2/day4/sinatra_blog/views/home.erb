@@ -1,7 +1,7 @@
 <h1> home </h1>
 
-<% @posts.each do |post|%>
-	<%= post.title %>
+<% @posts.each_with_index do |post,index|%>
+	<a href="/post_details/<%=index%>"> <%= post.title %> </a> 
 	<%= post.date %>
 	</br>
 	<% end %>
