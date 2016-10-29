@@ -3,8 +3,15 @@
 <h3> Which movie was made in <%=@random_movie.year%> </h3>
 <%x=0%>
 <%while x < 9 do %>
-		<img src ="<%=@movies_with_poster[x].poster%> height="200px" width="200px" ">
-	<%x+=1%>
+
+		<%if @random_movie.year == @movies_with_poster[x].year%>
+			<img src ="<%=@movies_with_poster[x].poster%>" onclick='alert("Correct")' height="200px" width="200px">
+			<%x+=1%>
+		<%else%>
+			<img src ="<%=@movies_with_poster[x].poster%>" onclick='alert("Incorrect")' height="200px" width="200px">
+			<%x+=1%>
+		<%end%>
+
 <%end%>
 
 
