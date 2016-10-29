@@ -14,10 +14,11 @@ end
 
 get "/search_results" do
   the_search = Imdb::Search.new(params[:movie])
-  @movies = the_search.movies
-  @first_twentyfive = @movies[0..25]
-  list.poster?(@first_twentyfive)
-  @movie_with_posters = list.all_movies
+  movies = the_search.movies
+  first_twentyfive = movies[0..25]
+  list.poster?(first_twentyfive)
+  @movies_with_poster = list.all_movies
+  @random_movie = @movies_with_poster.sample
 	erb :results
 end
 

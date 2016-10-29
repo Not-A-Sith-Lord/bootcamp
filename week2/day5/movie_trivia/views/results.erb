@@ -1,7 +1,9 @@
 <h1> RESULTS </h1>
+
+<h3> Which movie was made in <%=@random_movie.year%> </h3>
 <%x=0%>
 <%while x < 9 do %>
-		<img src ="<%=@movie_with_posters[x].poster%> height="200px" width="200px" ">
+		<img src ="<%=@movies_with_poster[x].poster%> height="200px" width="200px" ">
 	<%x+=1%>
 <%end%>
 
