@@ -1,0 +1,99 @@
+.top {
+	position: relative;
+	top:-10px;
+	display:inline-block;
+	background-image: url("images/family.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 1450px;
+	height: 800px;
+}
+
+.logo {
+	display: inline;
+	position:relative;
+	left:40px;
+	height: 112px;
+	width: 225px;
+}
+
+.signinbutton {
+	position: relative;
+	left:1050px;
+	top:-50px;
+	display: inline-block;
+	color: white;
+	font-size: 1.3em;
+	background-color: rgba(252,0,0,1);
+	height: 35px;
+	width:135px;
+	text-align: center;
+	padding-top: 5px;
+	font-family: ProximaNova-Light;
+}
+
+.watch {
+	position:relative;
+	top:75px;
+	left:300px;
+	font-size: 4em;
+	width: 900px;
+	background-color: rgba(0, 0, 0, 0.5);
+	height:375px;
+	text-align: center;
+
+}
+
+.whitetext {
+	top:50px;
+	color: white;
+	font-family: ProximaNova-Light;
+	padding-top: 50px;
+	padding-bottom: 0;
+}
+
+.freetrial {
+	position: relative;
+	display: inline-block;
+	top:-50px;
+	color: white;
+	font-size: .40em;
+	background-color: rgba(44,148,253,1);
+	height:40px;
+	width:300px;
+	text-align: center;
+	padding-top: 5px;
+	font-family: ProximaNova-Light;
+}
+
+.movies {
+	top:50px;
+	left:75px;
+	position:absolute;
+	top: 825px;
+}
+
+.movies h1 {
+	margin-left: 25px;
+	font-family: ProximaNova-Light;
+}
+
+.movie {
+	height: 300px;
+	width: 200px;
+	margin:32.5px;
+}
+.footer {
+	position: absolute;
+	background-color: black;
+	width:1450px;
+	height:75px;
+	top: 1350px;
+}
+
+
+
+
+
+
+
