@@ -1,0 +1,47 @@
+body,
+html,
+.derp {
+	height: 100%
+}
+
+.derp {
+	
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-position: center;
+	color: red;
+
+
+background-image: url(https://media.giphy.com/media/12RHDGYYdJiBjO/giphy.gif);
+}
+
+h1 {
+	font-size: 30px;
+}
+
+@media screen and (min-width: 768px) {
+	.derp {
+		background-image: url(https://media.giphy.com/media/IMDSOJvLn9RaU/giphy.gif);
+	}
+	h1 {
+	font-size: 50px;
+}
+}
+
+@media screen and (min-width: 992px) {
+	.derp {
+		background-image: url(https://media.giphy.com/media/kf4ncoop5h41a/giphy.gif);
+	}
+	h1 {
+	font-size: 80px;
+}
+}
+
+@media screen and (min-width: 1200px) {
+	.derp {
+		background-image: url(https://media.giphy.com/media/8Tinemlo7giHu/giphy.gif);
+	}
+	h1 {
+	font-size: 100px;
+}
+}
