@@ -1,4 +1,4 @@
-function caesarCipher (message) {
+function caesarCipher (message,shift= -3) {
 	
 	letters = message.split("");
 	newString = "";
@@ -15,14 +15,13 @@ function caesarCipher (message) {
 			newString += newChar;
 		}
 		else {
-		var charChange = (char - 3);
+		var charChange = (char + shift);
 		var newChar = (String.fromCharCode(charChange));
 		newString += newChar;
 		};
 	})
 
 	return (newString);
-
 
 }
 
