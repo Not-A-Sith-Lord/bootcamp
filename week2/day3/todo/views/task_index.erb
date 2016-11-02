@@ -7,6 +7,11 @@
 
 <%@alltasks.each do |task|%>
 
+<%if task.completed? == true%>
+
+	<%=task "has been completed"%>
+
+<%else%>
 
 
 <p> id#<%=task.id%>  <%= task.content%>  
@@ -17,5 +22,5 @@
 
 </p>
 	
-
+<%end%>
 <%end%>

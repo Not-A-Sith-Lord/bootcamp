@@ -30,7 +30,8 @@ post "/create_task" do
 end
 
 post "/complete" do
-	todo_list.delete_task(params[:complete].to_i)
+	to_complete = todo_list.find_task_by_id(params[:complete].to_i)
+	@completed_task = to_complete.completed!
 	redirect "/task_index"
 end
 
