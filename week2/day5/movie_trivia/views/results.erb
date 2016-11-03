@@ -4,7 +4,7 @@
 <%x=0%>
 <%while x < 9 do %>
 
-		<%if @random_movie.year == @movies_with_poster[x].year%>
+		<%if @random_movie == @movies_with_poster[x]%>
 			<img src ="<%=@movies_with_poster[x].poster%>" onclick='alert("Correct")' height="200px" width="200px">
 			<%x+=1%>
 		<%else%>
