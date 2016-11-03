@@ -16,8 +16,22 @@ function caesarCipher (message,shift= -3) {
 		}
 		else {
 		var charChange = (char + shift);
-		var newChar = (String.fromCharCode(charChange));
-		newString += newChar;
+		if (charChange > 122) {
+			var zChar = (charChange - 26);
+			newChar = (String.fromCharCode(zChar));
+			newString += newChar;
+		}
+		else if (charChange < 97) {
+			var aChar = (charChange + 26);
+			newChar = (String.fromCharCode(aChar));
+			newString += newChar;
+		}
+		else {
+			var charChange = (char + shift)
+			newChar = (String.fromCharCode(charChange));
+			newString += newChar;
+
+		};
 		};
 	})
 
@@ -25,7 +39,7 @@ function caesarCipher (message,shift= -3) {
 
 }
 
-var encrypted = caesarCipher("brut$%^us");
+var encrypted = caesarCipher("a", 6);
 
 console.log(encrypted);
 
