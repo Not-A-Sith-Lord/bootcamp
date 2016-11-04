@@ -4,8 +4,6 @@ class Viking {
 		this.health = health;
 		this.strength = strength;
 	}
-
 }
-
 
 module.exports = Viking;

@@ -12,9 +12,12 @@ class pitFight{
 		while (vik1NewHealth > 5 && vik2NewHealth > 5){
 			vik1NewHealth = vik1NewHealth - this.vik2.strength;
 			vik2NewHealth = vik2NewHealth - this.vik1.strength;
-			console.log(`${vik1NewHealth}, ${vik2NewHealth}`);
+			console.log("");
+			console.log(`${this.vik1.name}'s health is ${vik1NewHealth},and ${this.vik2.name}'s health is ${vik2NewHealth}`);
+			console.log("");
 		}
-		console.log("the fight is over")	
+		console.log("Settle down bro's. this is only a drill");	
+		console.log("");
 	}
 
 }
