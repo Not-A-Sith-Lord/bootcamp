@@ -2,7 +2,9 @@ class Battle{
 	constructor(vikings,saxons){
 		this.vikings = vikings;
 		this.saxons = saxons;
-		this.turns = Math.floor(Math.random()*(8-5+1)+5);
+		this.numTurns = 0;
+		this.deadVillagers = 0;
+	
 	}
 
 	battle (){
@@ -11,39 +13,59 @@ class Battle{
 		for (x = 0; x<this.vikings.length ; x++){
 			console.log(`${this.vikings[x].name} shouts his war cry: ${this.vikings[x].warcry}`);
 		}
+		var theVillagers = this.saxons;
+		var theWarriors = this.vikings;
 
-		var Warrior = this.vikings[Math.floor(Math.random()*this.vikings.length)];
-		var Villager = this.saxons[Math.floor(Math.random()*this.saxons.length)];
 
-		var numTurns = 0;
-		var deadVillagers = 0;
+		var Warrior = theWarriors[Math.floor(Math.random()*theWarriors.length)];
+		var Villager = theVillagers[Math.floor(Math.random()*theVillagers.length)];
 
-		var WarriorHealth = Warrior.health;
-		var VillagerHealth = Villager.health;
 
-		while ((WarriorHealth > 0 && VillagerHealth > 0) && numTurns < this.turns){
-			WarriorHealth = WarriorHealth - Villager.strength;
-			VillagerHealth = VillagerHealth - Warrior.strength;
-			numTurns++;
-			if (VillagerHealth <= 0) {
-				deadVillagers ++;
-			}
-
+		while (Warrior.health > 0 && Villager.health > 0) {
+			Warrior.health = Warrior.health - Villager.strength;
+			Villager.health = Villager.health - Warrior.strength;
+			this.numTurns++;	
 		}
-		console.log("");
-		console.log("");
-		console.log(`${Warrior.name} ${WarriorHealth},${VillagerHealth}`);
-		console.log(`there are ${deadVillagers} dead saxons`);
-		console.log(`there have been ${numTurns} turns`);
+
+		var v;
+		for (v = 0; v < theVillagers.length; v++){
+			if (theVillagers[v].health < 1){
+				this.deadVillagers++;
+			}
+		}
+		
+		this.saxons = theVillagers.filter(function(villager){
+			return villager.health > 0;
+		});
+
+		this.vikings = theWarriors.filter(function(warrior){
+			return warrior.health > 0;
+		});
+
 	
+		console.log("");
+		console.log("");
+		console.log(`${Warrior.name} ${Warrior.health},${Villager.name} health ${Villager.health}`);
+		console.log(`there are ${this.deadVillagers} dead saxons`);
+		console.log(`there have been ${this.numTurns} turns`);
+
+		if (this.saxons.length > 0 && this.vikings.length > 0 ){
+			this.battle();
+		}
+		// console.log("\n\nhhhhhhhhhhhhhhhhhhh");
+
+		// console.log(theVillagers);
+
+		// console.log(theWarriors);
+
+
+
 	}
 }
 
 module.exports = Battle;
 
-// remove dead villager from the array
 // if villagers are still in array, call Battle again
-// else end the battle and display casualties
 // how to save warrior health for the next turn?
 
 

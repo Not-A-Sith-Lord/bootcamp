@@ -9,10 +9,10 @@ var Battle = require("./lib/battle.js");
 var allVikings = [];
 
 var Magnus = new Viking("Magnus",20,3,"Neeerrrds!");
-// var Ragnar = new Viking("Ragnar",15,5,"Make America Great Again!");
+var Ragnar = new Viking("Ragnar",15,5,"Make America Great Again!");
 
 allVikings.push(Magnus);
-// allVikings.push(Ragnar);
+allVikings.push(Ragnar);
 
 //=============================================
 //            Pit Fight
@@ -26,22 +26,22 @@ allVikings.push(Magnus);
 
 var allSaxons = [];
 
-var Saxon1 = new Saxon();
-var Saxon2 = new Saxon();
-var Saxon3 = new Saxon();
-var Saxon4 = new Saxon();
-var Saxon5 = new Saxon();
-var Saxon6 = new Saxon();
-var Saxon7 = new Saxon();
-var Saxon8 = new Saxon();
-var Saxon9 = new Saxon();
-var Saxon10 = new Saxon();
-var Saxon11 = new Saxon();
-var Saxon12 = new Saxon();
-var Saxon13 = new Saxon();
-var Saxon14 = new Saxon();
-var Saxon15 = new Saxon();
-var Saxon16 = new Saxon();
+var Saxon1 = new Saxon("sax1");
+var Saxon2 = new Saxon("sax2");
+var Saxon3 = new Saxon("sax3");
+var Saxon4 = new Saxon("sax4");
+var Saxon5 = new Saxon("sax5");
+var Saxon6 = new Saxon("sax6");
+var Saxon7 = new Saxon("sax7");
+var Saxon8 = new Saxon("sax8");
+var Saxon9 = new Saxon("sax9");
+var Saxon10 = new Saxon("sax10");
+var Saxon11 = new Saxon("sax11");
+var Saxon12 = new Saxon("sax12");
+var Saxon13 = new Saxon("sax13");
+var Saxon14 = new Saxon("sax14");
+var Saxon15 = new Saxon("sax15");
+var Saxon16 = new Saxon("sax16");
 
 allSaxons.push(Saxon1);
 allSaxons.push(Saxon2);
