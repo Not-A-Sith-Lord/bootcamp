@@ -1,0 +1,46 @@
+.navbar {
+	position: absolute;
+	height: 30px;
+	padding: 0px;
+}
+.home {
+	position: relative;
+	color: black;
+	left: 125px;
+	top: 15px;
+	font-size: 14px;
+}
+.search {
+	position: relative;
+	width:200px;
+	left: 900px;
+	top:-50px;
+}
+.moments {
+	position: relative;
+	color: black;
+	left: 225px;
+	top: -15px;
+	font-size: 14px;
+}
+.jumbotron {
+	position: relative;
+	margin-top: -10px;
+	padding-top: -10px;
+	background-image: url("https://pbs.twimg.com/profile_banners/12044602/1449012734/1500x500");
+	background-size: cover;
+	height: 400px;
+	top: -10px;
+}
+
+/*.BGimage {
+	position: relative;
+	background-color: blue;
+}*/
+
+.glyphicon-ok-sign {
+	color: blue;
+	size: 20%;
+}
+
+
