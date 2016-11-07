@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'site#home', as: :home
   get '/text_inspections/new', to: 'text_inspections#new', as: :text
   post "/text_inspections", to: "text_inspections#create", as: :create
+  get '/asciis/new', to: 'asciis#new', as: :asciis
+  post 'asciis', to: 'asciis#create'
 
 end

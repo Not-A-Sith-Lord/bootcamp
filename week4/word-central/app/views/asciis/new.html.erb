@@ -1,0 +1,13 @@
+<h1> asciis </h1>
+
+<form action="/asciis" method="POST">
+<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+      
+  <div>
+    <label for="asciis_user_text">Text</label>
+    <textarea name="asciis[user_text]" id="asciis_user_text"></textarea>
+  </div>
+
+   <button type="submit">Submit text</button>
+</form>
