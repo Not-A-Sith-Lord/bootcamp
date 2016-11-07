@@ -3,7 +3,4 @@ class SiteController < ApplicationController
 		render 'home'
 	end
 
-	def text_inspections
-		render 'text_inspection'
-	end
 end
