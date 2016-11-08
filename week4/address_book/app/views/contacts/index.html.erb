@@ -2,12 +2,15 @@
 
 
 <ul>
-<% @contacts.each do |contact| %>
-<li>
-<%= contact.name%>
-</li>
-<%end%>
+
+	<% @sorted.each do |contact| %>
+		<li>
+		<%= contact.name%>
+		</li>
+		<%end%>
+
 </ul>
+
 
 <a href="/new"> add new contact </a>
 

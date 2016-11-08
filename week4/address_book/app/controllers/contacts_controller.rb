@@ -2,6 +2,8 @@ class ContactsController < ApplicationController
 
 	def index
 		@contacts = Contact.all
+		@sorted = @contacts.sort do |a,b| a[:name] <=> b[:name] end		
+		
 		render 'index'
 	end
 
