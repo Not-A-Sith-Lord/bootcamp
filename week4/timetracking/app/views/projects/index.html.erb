@@ -1,6 +1,6 @@
 <h1> Index </h1>
 
-<%@projects.each do |project|%>
+<%@my_projects.each do |project|%>
 
  	<%= link_to project.name, project_path(project)%> 
 
@@ -10,6 +10,8 @@
 		</p>
 
 <% end %>
+
+<%= link_to 'creat new project', projects_new_path%>
 
 
 
