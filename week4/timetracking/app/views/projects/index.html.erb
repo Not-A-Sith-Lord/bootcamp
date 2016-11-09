@@ -1,17 +1,20 @@
 <h1> Index </h1>
 
 <%@my_projects.each do |project|%>
+	<p>
 
  	<%= link_to project.name, project_path(project)%> 
 
 		 <% if project.description != 'nill' %>
 			<%= project.description %>
 		<%end%> 
-		</p>
+
+		<%= link_to("see time entries", project_time_entries_path(project))%>
+	</p>
 
 <% end %>
 
-<%= link_to 'creat new project', projects_new_path%>
+<h2> <%= link_to 'creat new project', projects_new_path%> </h2>
 
 
 
