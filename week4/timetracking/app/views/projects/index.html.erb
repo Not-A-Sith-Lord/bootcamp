@@ -2,7 +2,7 @@
 
 <%@projects.each do |project|%>
 
- 	<p><%=project.name%> 
+ 	<%= link_to project.name, project_path(project)%> 
 
 		 <% if project.description != 'nill' %>
 			<%= project.description %>
