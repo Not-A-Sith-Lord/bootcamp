@@ -5,7 +5,8 @@
 
 	<% @sorted.each do |contact| %>
 		<li>
-		<a href="/show"> <%= contact.name%> </a>
+		 <%= link_to("#{contact.name}", show_path(contact))%> 
+		 <!-- <a href="/contact/contct.id"> contact.name </a> -->
 		</li>
 		<%end%>
 
@@ -13,4 +14,7 @@
 
 
 <a href="/new"> add new contact </a>
+
+
+
 
