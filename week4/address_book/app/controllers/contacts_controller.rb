@@ -20,6 +20,11 @@ class ContactsController < ApplicationController
 
       	contact.save
 
-		redirect_to("/")  end
+		redirect_to("/")  
+	end
+
+	def show
+		render 'show'
+	end
 
 end
