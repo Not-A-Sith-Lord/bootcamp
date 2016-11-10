@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@my_product = Product.find(params[:id])
 		@my_user = User.find(params[:id])
 		render 'show'
 	end
