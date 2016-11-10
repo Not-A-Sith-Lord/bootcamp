@@ -2,8 +2,9 @@
 <br>
 <%= @my_user.email %>
 <br>
- <%= link_to "#{@my_product.title}", user_product_path(@my_product)%>
-
+<%@my_product.each do |one_product|%>
+ <%= link_to "#{one_product.title}", user_product_path(one_product)%>
+<% end %>
 <br>
 <br>
 
