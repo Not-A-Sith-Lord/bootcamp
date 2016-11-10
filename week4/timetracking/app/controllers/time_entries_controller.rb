@@ -13,7 +13,7 @@ class TimeEntriesController < ApplicationController
 	def create
 		@my_project = Project.find(params[:project_id])
 		@my_entry = @my_project.time_entries.new(entry_params)
-		
+
 			#------ entry params!!!
 
 			# hours: params[:time_entry][:hours],
@@ -42,6 +42,19 @@ class TimeEntriesController < ApplicationController
 		else
 			render :edit
 		end
+	end
+
+	def destroy
+		# 1 RETRIEVE PROJECT
+		# 2 RETRIEVE TIME ENTRY
+		# 3 DELETE TIME ENTRY
+		# 4 redirect
+
+		my_project = Project.find params[:project_id]
+		my_entry = my_project.time_entries.find params[:id]
+		my_entry.destroy
+		redirect_to project_time_entries_path(my_project)
+
 	end
 
 
