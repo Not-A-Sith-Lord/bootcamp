@@ -1,0 +1,19 @@
+<h6> site home </h6>
+
+<h1> Concerts today </h1>
+
+<% @today.each do |t|%>
+<%= link_to "#{t.artist}", concert_path(t)%>
+<br>
+<% end %>
+
+
+<bar>
+<p> Concerts this month </p>
+<ul>
+<% @this_month.each do |m|%>
+<li> <%= m.artist%> </li>
+<% end %>
+</ul>
+
+</bar>

@@ -1,5 +1,9 @@
 class ConcertsController < ApplicationController
 
+	def home
+		render :home
+	end
+
 	def index
 		@concert = Concert.all
 		render :index
@@ -23,8 +27,11 @@ class ConcertsController < ApplicationController
 		:date => params[:concert][:date],
 		:price => params[:concert][:price],
 		:description => params[:concert][:description])
-		@my_concert.save!
+	  if @my_concert.save
 		redirect_to concerts_path
+	  else
+		render :new
+	  end
 	end
 end
 
