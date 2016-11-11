@@ -1,6 +1,8 @@
 <h1> concerts index </h1>
 
-<% @my_concert.each do |one_concert| %>
+<% @concert.each do |one_concert| %>
 	<%= link_to "#{one_concert.artist}", concert_path(one_concert.id) %>
 <br>	
 	<% end %>
+
+<%= link_to "add new concert", new_concert_path %>

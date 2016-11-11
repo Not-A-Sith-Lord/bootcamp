@@ -1,1 +1,11 @@
-<h1> <%= @my_concert.artist %> </h1>
+<h1> <%= @concert.artist %> </h1>
+
+<ul>
+	<li> Venue: <%= @concert.venue %> </li>	
+	<li> City: <%= @concert.city %> </li>
+	<li> Date: <%= @concert.date %> </li>	
+	<li> Price: <%= @concert.price %> </li>
+	<li> Description: <%= @concert.description %> </li>
+</ul>
+
+<%= link_to "All concerts", concerts_path%>
