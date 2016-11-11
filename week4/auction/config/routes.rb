@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users do
   	resources :products
   end
+  
+ 	get '/global', to: 'products#global'
 
 end
 
