@@ -8,12 +8,12 @@
 <% end %>
 
 
-<bar>
+<div class="bar">
 <p> Concerts this month </p>
 <ul>
 <% @this_month.each do |m|%>
-<li> <%= m.artist%> </li>
+<li> <%= link_to"#{m.artist}", concert_path(m.id)%> </li>
 <% end %>
 </ul>
 
-</bar>
+</div>
