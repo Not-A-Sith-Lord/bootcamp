@@ -1,6 +1,6 @@
 <h1> global products </h1>
 
 <% @product.each do |one_product|%>
-	<%= link_to "#{one_product.title}"%>   
+	<%= link_to "#{one_product.title}", user_product_path(one_product.user_id,one_product.id)%>   
 <br>	
 	<%end%>

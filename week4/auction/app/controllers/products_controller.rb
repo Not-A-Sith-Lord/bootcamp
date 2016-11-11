@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 	def new
 		@user = User.find(params[:user_id])
 		@product = Product.new
-		render "products/new"
+		render "new"
 	end
 
 	def create
@@ -16,8 +16,9 @@ class ProductsController < ApplicationController
 		@my_product = Product.new(
 			:title => params[:product][:title],
 			:description => params[:product][:description],
-			:deadline => params[:product][:deadline])
-		@my_product.save
+			:deadline => params[:product][:deadline],
+			:user_id => @user.id)
+		@my_product.save!
 		redirect_to user_path(@user)
 	end
 
