@@ -8,3 +8,8 @@
 	<li> Description: <%= @concert.description %> </li>
 </ul>
 
+<% @this_concert.each do |one_comment|%>
+	<%= one_comment.content%>
+	<br>
+	<% end %>
+

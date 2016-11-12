@@ -11,6 +11,13 @@ class ConcertsController < ApplicationController
 
 	def show
 		@concert = Concert.find(params[:id])
+		@this_concert = []
+		@comment = Comment.all
+		@comment.each do |one_comment|
+			if one_comment.concert_id.to_i == @concert.id.to_i
+				@this_concert.push(one_comment)
+			end
+		end
 		render :show
 	end
 

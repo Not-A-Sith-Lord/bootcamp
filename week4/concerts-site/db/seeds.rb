@@ -11,6 +11,14 @@ Drake = Concert.create!(artist: "Drake", venue: "Collesium", city: "Toronto", da
 PinkFloyd = Concert.create!(artist: "Pink Floyd", venue: "FedEx Forum", city: "Memphis", date: Date.today + 1.month, price: 500, description: "Greatest thing ever")
 TaylorSwift = Concert.create!(artist: "Taylor Swift", venue: "Grand ol Opry", city: "Nashville", date: Date.today + 1.week, price: 10, description: "Country is lame")
 
+comment1 = Comment.create!(title: "Fun", content: "should be fun", concert_id: Beyonce.id)
+comment2 = Comment.create!(title: "neato", content: "should be neat", concert_id: Beyonce.id)
+
+comment3 = Comment.create!(title: "meh", content: "meh its okay i guess", concert_id: Drake.id)
+comment4 = Comment.create!(title: "ok", content: "should be okay", concert_id: Drake.id)
+
+
+
 
 
 
