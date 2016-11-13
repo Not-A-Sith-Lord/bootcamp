@@ -2,6 +2,58 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.bar {
-	float: right;
+
+.homepage {
+	background-image: url("handsbackground.jpg");
+	position: relative;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	top: -20px;
+	height: 830px;
+	width: 1450px;
+	left: -10px;
 }
+
+.btn-group btn-group-justified {
+	position: relative;
+	margin-top: 100px;
+	margin: 0px;
+	display: block;
+	top: 100px;
+}
+
+.today {
+	position: relative;
+	left: 250px;
+	top: 200px;
+}
+
+.bar {
+	position: relative;
+	float: right;
+	top: 135px;
+	margin-right: 200px;
+}
+.concert-index {
+	position: relative;
+	left: 370px;
+	top: 100px;
+}
+
+.show {
+	position: relative;
+	left:300px;
+	top: 100px;
+}
+
+.form {
+	position: relative;
+	top: 100px;
+	left: 100px;
+}
+.go-back {
+	position: relative;
+	left: 100px;
+	top: 120px;
+}
+

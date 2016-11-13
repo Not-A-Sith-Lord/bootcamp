@@ -1,7 +1,11 @@
-<h1> concerts index </h1>
+
+
+<div class="concert-index">
+<h1> All Upcoming </h1>
 
 <% @concert.each do |one_concert| %>
-	<%= link_to "#{one_concert.artist}", concert_path(one_concert.id) %>
-<br>	
+	<p class="index-single"><%= link_to "#{one_concert.artist}", concert_path(one_concert.id) %></p>	
+
 	<% end %>
 
+</div>

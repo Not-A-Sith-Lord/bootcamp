@@ -1,3 +1,5 @@
+<div class="show">
+
 <h1> <%= @concert.artist %> </h1>
 
 <ul>
@@ -17,4 +19,7 @@
 	<% end %>
 <br>
 
+
+
 <%= link_to "add a comment", new_concert_comment_path(@concert.id)%>
+</div>

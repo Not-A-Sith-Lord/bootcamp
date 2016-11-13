@@ -1,5 +1,30 @@
-<h3> navigation</h3>
-<%= link_to "Add", new_concert_path %>
-<%= link_to "Concerts", concerts_path%>
-<%= link_to "Home", home_path%>
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+
+  <div class="btn-group" role="group">
+   <a href="/"> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+Home</button> </a>
+  </div>
+
+  
+  <div class="btn-group" role="group">
+   <a href= "/concerts"> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+See All Concerts</button></a>
+  </div>
+
+  <div class="btn-group" role="button">
+    <a href="/concerts/new"><button type="button" class="btn btn-default">  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add an Event</button> </a>
+  </div>
+  
+
+
+</div>
+
+
+
+
+
 
