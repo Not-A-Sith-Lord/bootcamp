@@ -19,7 +19,11 @@
 	margin-top: 100px;
 	margin: 0px;
 	display: block;
-	top: 100px;
+	top: 200px;
+}
+
+.btn-group {
+	color: blue;
 }
 
 .today {
@@ -31,7 +35,7 @@
 .bar {
 	position: relative;
 	float: right;
-	top: 135px;
+	top: 110px;
 	margin-right: 200px;
 }
 .concert-index {
@@ -42,7 +46,9 @@
 
 .show {
 	position: relative;
-	left:300px;
+	padding: 0px;
+	margin: 0px;
+	left:400px;
 	top: 100px;
 }
 
@@ -56,4 +62,46 @@
 	left: 100px;
 	top: 120px;
 }
+
+.link_to {
+    color: black;
+    text-decoration: underline;
+}
+
+.new-comment {
+	position: relative;
+	left: 200px;
+	top: 100px;
+}
+.add-new-comment {
+	position: relative;
+	left: 725px;
+	top: -160px;
+}
+
+.media {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	top: -150px;
+	left: 715px;
+	background: white;
+	width: 200px;
+	text-align: center;
+	border: 1px solid grey;
+}
+
+.media-heading {
+	text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
 

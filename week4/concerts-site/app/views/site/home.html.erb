@@ -17,7 +17,7 @@
 
 
 <div class="bar">
-	<p> Concerts this month </p>
+	<h3> <p> Concerts this month </p> </h3>
 		<% @this_month.each do |m|%>
 	<%= link_to"#{m.artist}", concert_path(m.id)%> </li>
 	<br>

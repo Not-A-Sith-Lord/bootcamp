@@ -9,17 +9,24 @@
 	<li> Price: <%= @concert.price %> </li>
 	<li> Description: <%= @concert.description %> </li>
 </ul>
+     <!-- Posted Comments -->
+<h3 class="add-new-comment"><%= link_to "add a comment", new_concert_comment_path(@concert.id)%> </h3>
 
-<% @this_concert.each do |one_comment|%>
-	<%= one_comment.title%>
-	<br>
-	<%= one_comment.content%>
-	<br>
-	<br>
-	<% end %>
-<br>
+                <!-- Comment -->
+      <% @this_concert.each do |one_comment|%>
+                <div class="media">
+                <ul>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+						<%= one_comment.title%>
+                        </h4>
+                       	<%= one_comment.content%>
 
 
-
-<%= link_to "add a comment", new_concert_comment_path(@concert.id)%>
+                    </div>
+                </div>
+                	<% end %>
 </div>
+
+
