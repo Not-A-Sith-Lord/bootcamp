@@ -1,0 +1,13 @@
+.row {
+	border: 1px solid black;
+}
+
+.col-xs-8 {
+	border: 1px dashed red;
+}
+.announcement {
+	background-color: blue;
+	text-align: center;
+	padding: 10px;
+	font-weight: bold;
+}

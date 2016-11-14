@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
 	def global
 		@product = Product.all
 		render 'global'
-	end
+	end 
 
 end
 
