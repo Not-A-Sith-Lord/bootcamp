@@ -24,5 +24,12 @@ var phrases = [
 
 	$(".change").on("click", randomPhrase);
 
-});
 
+	$(".js-add").keypress(function(e) {
+    if(e.which == 13) {
+    	 phrases.push(`#{newPhrase}`);
+    	};
+	});
+
+
+});
