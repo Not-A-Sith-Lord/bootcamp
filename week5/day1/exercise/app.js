@@ -15,16 +15,14 @@ var phrases = [
 	'holy shinto'
 ]
 
-
 	function randomPhrase(){
  	var x = phrases[Math.floor(phrases.length * Math.random())];
-		$("body").append(`${x}`);
-};
+		$("p").html(`${x}`);
+	};
 
-randomPhrase();
+	randomPhrase();
 
-
-
+	$(".change").on("click", randomPhrase);
 
 });
 
