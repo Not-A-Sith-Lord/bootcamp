@@ -11,7 +11,6 @@ PokemonApp.Pokemon = class {
 	constructor (pokemonUri) {
 		this.apiUrl = pokemonUri;
 	}
-
 	render () {
 		console.log(`rendering pokemon with url: ${this.apiUrl} `);
 		$.ajax ({
@@ -24,7 +23,6 @@ PokemonApp.Pokemon = class {
 
 PokemonApp.showPokemonModal = function(apiResult){
 	console.log("pokemon API success!");
-	console.log(apiResult);
 
 	$(".js-pkmn-name").text(apiResult.name);
 	$(".js-pkmn-number").text(`#${apiResult.pkdx_id}`);
@@ -39,18 +37,42 @@ PokemonApp.showPokemonModal = function(apiResult){
 
 
 	var types = (apiResult.types);
-	console.log(types);
 
 	function addTypes(){
 		$(".js-pkmn-types").empty();
 		types.forEach(function(oneType){
-			console.log(oneType.name);
 			$(".js-pkmn-types").append(`${oneType.name} `);
 		});
 	}
-
 	addTypes();
 	$(".js-pokemon-modal").modal("show");
+
+	console.log(apiResult);
+
+	var allDerp = apiResult.descriptions;
+
+	var sorted = allDerp.sort(function(a,b){
+		if(a.name < b.name){
+			return 1;
+		}
+		else if(b.name < a.name){
+			return -1;
+		}
+		else {
+			return 0;
+		}
+	});
+
+var descriptionUrl = (sorted[0].resource_uri);
+console.log(descriptionUrl);
+	
+
+
+
+
+
+
+
 };
 
 PokemonApp.handleError = function(errorThang){
