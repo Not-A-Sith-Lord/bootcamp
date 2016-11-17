@@ -65,15 +65,25 @@ PokemonApp.showPokemonModal = function(apiResult){
 
 var descriptionUrl = (sorted[0].resource_uri);
 console.log(descriptionUrl);
+
+		$.ajax ({
+			url: `${descriptionUrl}`,
+			success: PokemonApp.showDescription,
+			error: PokemonApp.handleError,
+		});
+
+};
+
+PokemonApp.showDescription = function(apiDesc){
+		console.log("got desc from api");
+		console.log(apiDesc);
+		var description = apiDesc.description;
+		$(".js-pkmn-description").text(description);
+
+};
 	
 
 
-
-
-
-
-
-};
 
 PokemonApp.handleError = function(errorThang){
 	console.log("API error");
