@@ -7,6 +7,9 @@ $(document).on("ready", function(){
 	});
 });
 
+// ----------------------------------------------
+// ----------------------------------------------
+
 PokemonApp.Pokemon = class {
 	constructor (pokemonUri) {
 		this.apiUrl = pokemonUri;
@@ -20,6 +23,9 @@ PokemonApp.Pokemon = class {
 		});
 	}
 };
+
+// ----------------------------------------------
+// ----------------------------------------------
 
 PokemonApp.showPokemonModal = function(apiResult){
 	console.log("pokemon API success!");
@@ -47,7 +53,6 @@ PokemonApp.showPokemonModal = function(apiResult){
 	addTypes();
 	$(".js-pokemon-modal").modal("show");
 
-	console.log(apiResult);
 
 	var allDerp = apiResult.descriptions;
 
@@ -64,7 +69,7 @@ PokemonApp.showPokemonModal = function(apiResult){
 	});
 
 var descriptionUrl = (sorted[0].resource_uri);
-console.log(descriptionUrl);
+// console.log(descriptionUrl);
 
 		$.ajax ({
 			url: `${descriptionUrl}`,
@@ -72,19 +77,40 @@ console.log(descriptionUrl);
 			error: PokemonApp.handleError,
 		});
 
+// console.log(apiResult.sprites[0].resource_uri);
+var imageUrl = apiResult.sprites[0].resource_uri;
+console.log(imageUrl);
+
+		$.ajax ({
+			url: `${imageUrl}`,
+			success: PokemonApp.showImage,
+			error: PokemonApp.handleError,
+		});
+
+
+
+
 };
+// ----------------------------------------------
+// ----------------------------------------------
 
 PokemonApp.showDescription = function(apiDesc){
-		console.log("got desc from api");
-		console.log(apiDesc);
+		// console.log("got desc from api");
+		// console.log(apiDesc);
 		var description = apiDesc.description;
 		$(".js-pkmn-description").text(description);
 
 };
+
+PokemonApp.showImage = function(apiImage){
+	console.log(apiImage);
+		console.log("got image from api");
+		console.log(apiImage.image);
+		var image = apiImage.image;
+		$(".js-pkmn-image").prop("src","http://pokeapi.co"+image+"?raw=true");
+
+};
 	
-
-
-
 PokemonApp.handleError = function(errorThang){
 	console.log("API error");
 	console.log(errorThang.responseText);
