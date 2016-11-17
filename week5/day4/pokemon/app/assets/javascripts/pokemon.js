@@ -107,7 +107,10 @@ PokemonApp.showImage = function(apiImage){
 		console.log("got image from api");
 		console.log(apiImage.image);
 		var image = apiImage.image;
-		$(".js-pkmn-image").prop("src","http://pokeapi.co"+image+"?raw=true");
+		var fix = image.substring(11);
+		console.log(fix);
+		// $(".js-pkmn-image").prop("src","http://pokeapi.co"+image+"?raw=true");
+	 	$(".js-pkmn-image").prop("src",`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${fix}`);
 
 };
 	
