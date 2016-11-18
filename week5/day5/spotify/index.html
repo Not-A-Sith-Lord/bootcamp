@@ -1,7 +1,11 @@
 <html>
 <head>
-	<title></title>
+	<title>Spotify track search</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="jquery-3.1.1.js"></script>
+	<script src="app.js"></script>
 </head>
 <body>
 	<div class="widget">
@@ -21,11 +25,16 @@
 		</div>
 		</div>
 		<div class="cover">
-		<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+		<img class="image" src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
 		</div>
 
 		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
 	</div>
+
+<form class="js-search-form">
+	<input type="text" class="js-search-track" placeholder="Hunger of the Pine">
+	<button> Search</button>
+</form>
 
 </body>
 </html>
