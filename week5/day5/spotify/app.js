@@ -5,6 +5,8 @@ $(".js-search-form").on("submit", searchTrack);
 
 $(".btn-play").on("click", playSong);
 
+$(".js-song-Audio").on("timeupdate", printTime);
+
 });
 
 // =============================================
@@ -57,6 +59,7 @@ function handleError(apiError){
 	console.log("the was an error");
 	console.log(apiError.responseText);
 };
+
 // =============================================
 // =============================================
 
@@ -71,8 +74,18 @@ function playSong(){
 		$(".js-song-Audio").trigger('pause');
 		$(".js-song-Audio").removeClass('playing');
 	}
+
 };
 
+// =============================================
+// =============================================
+
+function printTime () {
+		var current = $('.js-song-Audio').prop('currentTime');
+		// console.debug('Current time: ' + current);
+		// console.log(current);
+		$(".js-current-time").attr("value", current);
+};
 
 
 
