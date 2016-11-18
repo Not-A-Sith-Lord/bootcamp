@@ -3,6 +3,8 @@ $(document).ready(function(){
 
 $(".js-search-form").on("submit", searchTrack);
 
+$(".btn-play").on("click", playSong);
+
 });
 
 // =============================================
@@ -25,7 +27,7 @@ function searchTrack(x){
 	});
 };
 
-// =============================================
+// ====================
 
 function showTrack(apiResponse){
 	// console.log("success!");
@@ -42,10 +44,36 @@ function showTrack(apiResponse){
 	var image = apiResponse.tracks.items[0].album.images[0].url;
 	// console.log(image);
 	$(".image").prop("src",image);
+
+	var songAudio = apiResponse.tracks.items[0].preview_url;
+	// console.log(songAudio);
+	$(".js-song-Audio").prop("src",songAudio);
+
 };
+
+// ====================
 
 function handleError(apiError){
 	console.log("the was an error");
 	console.log(apiError.responseText);
 };
+// =============================================
+// =============================================
+
+function playSong(){
+	// console.log("button clicked");
+	$(".js-song-Audio").trigger('play');
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
