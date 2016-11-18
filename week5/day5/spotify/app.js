@@ -62,7 +62,15 @@ function handleError(apiError){
 
 function playSong(){
 	// console.log("button clicked");
-	$(".js-song-Audio").trigger('play');
+	if ($(".js-song-Audio").hasClass('playing') === false){
+		// console.log("no class")
+		$(".js-song-Audio").trigger('play');
+		$(".js-song-Audio").addClass('playing');
+	}
+	else{
+		$(".js-song-Audio").trigger('pause');
+		$(".js-song-Audio").removeClass('playing');
+	}
 };
 
 
