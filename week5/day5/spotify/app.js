@@ -7,6 +7,8 @@ $(".btn-play").on("click", playSong);
 
 $(".js-song-Audio").on("timeupdate", printTime);
 
+$(".js-button-artist").on("click", searchArtist)
+
 });
 
 // =============================================
@@ -86,6 +88,54 @@ function printTime () {
 		// console.log(current);
 		$(".js-current-time").attr("value", current);
 };
+
+// =============================================
+// =============================================
+
+function searchArtist (){
+	// console.log("artist button clicked");
+	$('.js-modal').modal("show");
+
+
+	var currentArtist = $(".author").html();
+	// console.log(currentArtist);
+
+	$.ajax({
+		type: "GET",
+		url:`https://api.spotify.com/v1/search?type=artist&query=${currentArtist}`,
+		success: showArtist,
+		error: handleError,
+	});
+};
+
+// ===============
+
+function showArtist(apiResponse){
+	// console.log("success");
+	// console.log(apiResponse.artists.items[0]);
+	$(".modal-header").html(apiResponse.artists.items[0].name);
+	$(".js-artist-image").prop("src",apiResponse.artists.items[0].images[0].url);
+
+	$(".info").empty();
+
+	var genres = apiResponse.artists.items[0].genres;
+	var allGenres = genres.forEach(function(oneGenre){
+		// console.log(oneGenre);
+		$(".info").append(oneGenre,", ");
+	});
+
+	var followers = (apiResponse.artists.items[0].followers.total);
+	// console.log(followers);
+	$(".info").append("<br>","Followers:",followers);
+
+	var popularity = (apiResponse.artists.items[0].popularity);
+	// console.log(popularity);
+	$(".info").append("<br>","popularity:",popularity);
+
+};
+
+// =============================================
+// =============================================
 
 
 

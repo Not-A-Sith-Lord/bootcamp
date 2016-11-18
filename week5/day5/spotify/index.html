@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="jquery-3.1.1.js"></script>
+	<script src="bootstrap.js"></script>
 	<script src="app.js"></script>
 </head>
 <body>
@@ -17,7 +18,34 @@
 
 		<div class="metadata">
 		  <p class="title">Hunger of The Pine</p>
-		  <p class="author">alt-J</p>
+
+		  <button class="js-button-artist">
+		  	<p class="author">alt-J</p>
+		  </button>
+
+
+		  		<div class="modal fade js-modal">
+  					<div class="modal-dialog">
+   						 <div class="modal-content">
+
+      						<div class="modal-header">
+        <!-- Close button -->
+        						<button type="button" class="close" data-dismiss="modal" aria-label="   Close">
+          						  <span>&times;</span>
+        						</button>
+
+       							 <h2>This is the modal's header.</h2>
+      						</div>
+
+      						<div class="modal-body">
+      							<img class="js-artist-image" height="200px" width="300px" src=""/>
+        						<p class="info"></p>
+      						</div>
+
+   						 </div><!-- /.modal-content -->
+  					</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
 
 		  <div class="seekbar">
 		    <progress class="js-current-time" value="0" max="30"></progress>
