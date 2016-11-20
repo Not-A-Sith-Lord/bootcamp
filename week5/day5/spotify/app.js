@@ -7,7 +7,9 @@ $(".btn-play").on("click", playSong);
 
 $(".js-song-Audio").on("timeupdate", printTime);
 
-$(".js-button-artist").on("click", searchArtist)
+$(".js-button-artist").on("click", searchArtist);
+
+$(".js-see-more-results").on("click", showMore);
 
 });
 
@@ -137,8 +139,93 @@ function showArtist(apiResponse){
 // =============================================
 // =============================================
 
+function showMore(){
+	console.log("showMore button clicked");
+
+	var searchTerm = $(".js-search-track").val();
+	// console.log(searchTerm);
+
+		$.ajax({
+		type: "GET",
+		url:`https://api.spotify.com/v1/search?type=track&query=${searchTerm}`,
+		success: showMoreInfo,
+		error: handleError,
+		});
+};
+
+// ===============
+
+function showMoreInfo(apiResponse){
+	// console.log(apiResponse);
+	$(".js-modal2").modal("show");
+	// console.log("show more innfo");
+	var tracks = apiResponse.tracks.items;
+	// console.log(tracks);
+	$(".info").empty();
+	var x = 0;
+	for(x = 0; x < 5; x++){
+		 $(".info").append(
+		 	`<p>`,
+		 	`<button class="x">`,
+		 	tracks[x].name,
+		 	"</button>",
+		 	"</p>");
+		};
+		
+		$(".x").on("click", showNewTrack);
 
 
+
+};
+
+// ===============
+
+function showNewTrack(){
+	console.log("show a new track button clicked");
+	console.log($(".js-click-for-more"));
+
+
+	 // var searchTerm = $(".js-click-for-more");
+	 // console.log(tracks.artists[0].name);
+	 // console.log(track);
+
+
+
+
+	$.ajax({
+		type: "GET",
+		url:`https://api.spotify.com/v1/search?type=track&query=${"searchTerm"}`,
+		success: displayNewTrack,
+		error: handleError,
+	});
+};
+
+// ===============
+
+function displayNewTrack(apiResponse){
+	// console.log("displaying new track");
+	// console.log(apiResponse);
+
+
+
+	// var artist = apiResponse.tracks.items[0].artists[0].name;
+	// // console.log(artist);
+	// $(".author").html(artist);
+
+	// var songTitle = apiResponse.tracks.items[0].name;
+	// // console.log(songTitle);
+	// $(".title").html(songTitle);
+
+	// var image = apiResponse.tracks.items[0].album.images[0].url;
+	// // console.log(image);
+	// $(".image").prop("src",image);
+
+	// var songAudio = apiResponse.tracks.items[0].preview_url;
+	// // console.log(songAudio);
+	// $(".js-song-Audio").prop("src",songAudio);
+
+};
+	
 
 
 
