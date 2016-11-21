@@ -8,6 +8,7 @@ $(document).ready(function(){
 	function getVideo(){
 	console.log("button clicked");
 	var newVideo = prompt("What video do you want to add?");
+	
 	var newVideoTag = `<video controls src="${newVideo}"></video>`;
 	$(".js-all-videos").append(newVideoTag);
 	};

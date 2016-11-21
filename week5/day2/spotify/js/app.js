@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 	$(".js-search-form").on("submit", searchArtist);
+	$(".js-artist-albums").on("click", searchAlbums);
 
 });
 
@@ -26,6 +27,14 @@ function searchArtist(x){
 
 //=============================
 
+function handleError(errorThing){
+	console.log("Fetch Characters Error");
+	console.log(errorThing.responseText);
+}
+
+//=============================
+
+
 function showArtists(a){
 	// console.log("Success");
 	// console.log(a.artists['items'][0]);
@@ -35,8 +44,8 @@ function showArtists(a){
 	results.forEach(function(oneResult){
 	 var artistInfo = `
 	 <ul>
-	<li> ${oneResult.name} </li>
-	<li><img src=" ${oneResult.images[0].url}"></li>
+	<li class="js-artist-albums"> ${oneResult.name} </li>
+	<li> <img src=" ${oneResult.images[0].url}"> </li>
 	</ul>`
 	 $(".js-artists-list").append(artistInfo);
 	});
@@ -45,10 +54,9 @@ function showArtists(a){
 
 //=============================
 
-function handleError(errorThing){
-	console.log("Fetch Characters Error");
-	console.log(errorThing.responseText);
+function searchAlbums(){
+	console.log("AAAAAAAAAAAAAAAAAAAAA");
 }
 
-//=============================
+
 
