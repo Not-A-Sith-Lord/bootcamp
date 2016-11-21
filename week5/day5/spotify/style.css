@@ -1,4 +1,38 @@
 .widget {
+  position: relative;
+  top: 100px;
+}
+
+.js-see-more-results {
+  height: 25px;
+}
+
+.js-search-form {
+  display: inline-block;
+}
+
+.searchBar {
+  position: relative;
+  left: 310px;
+  top: 125px;
+}
+
+body {
+   background: linear-gradient(#66ccff,#ff80d5);
+}
+
+.modal-body {
+   background: linear-gradient(#66ccff,rgba(255, 128, 213, 0.39));
+}
+
+.modal-header {
+  font-size: 18px;
+  background-color: #66ccff;
+  border: none;
+}
+
+
+.widget {
   width: 300px;
   margin: 10px auto 0;
   border-radius: 5px;

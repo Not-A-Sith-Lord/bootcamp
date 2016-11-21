@@ -9,7 +9,7 @@ $(".js-song-Audio").on("timeupdate", printTime);
 
 $(".js-button-artist").on("click", searchArtist);
 
-$(".js-see-more-results").on("click", showMore);
+// $(".js-see-more-results").on("click", showMore);
 
 });
 
@@ -171,43 +171,27 @@ function showMoreInfo(apiResponse){
 		 	"</button>",
 		 	"</p>");
 		};
-		
 		$(".x").on("click", showNewTrack);
 
-
-
 };
 
 // ===============
 
-function showNewTrack(){
-	console.log("show a new track button clicked");
-	console.log($(".js-click-for-more"));
-
-
-	 // var searchTerm = $(".js-click-for-more");
-	 // console.log(tracks.artists[0].name);
-	 // console.log(track);
-
-
-
-
-	$.ajax({
-		type: "GET",
-		url:`https://api.spotify.com/v1/search?type=track&query=${"searchTerm"}`,
-		success: displayNewTrack,
-		error: handleError,
-	});
-};
+// function showNewTrack(){
+// 	console.log("show a new track button clicked");
+// 	  $.ajax({
+// 		type: "GET",
+// 		url:`https://api.spotify.com/v1/search?type=track&query=${"searchTerm"}`,
+// 		success: displayNewTrack,
+// 		error: handleError,
+// 	});
+// };
 
 // ===============
 
-function displayNewTrack(apiResponse){
+// function displayNewTrack(apiResponse){
 	// console.log("displaying new track");
 	// console.log(apiResponse);
-
-
-
 	// var artist = apiResponse.tracks.items[0].artists[0].name;
 	// // console.log(artist);
 	// $(".author").html(artist);
@@ -224,7 +208,11 @@ function displayNewTrack(apiResponse){
 	// // console.log(songAudio);
 	// $(".js-song-Audio").prop("src",songAudio);
 
-};
+// };
+
+// =============================================
+// =============================================
+
 	
 
 
