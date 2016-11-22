@@ -1,2 +1,4 @@
 class SandwichIngredientsController < ApplicationController
+
+	
 end

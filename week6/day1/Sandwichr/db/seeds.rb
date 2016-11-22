@@ -8,5 +8,8 @@
 
 
 sandwich1 = Sandwich.create!(name: "salami", bread_type: "hoagie")
+sandwich2 = Sandwich.create!(name: "steak", bread_type: "donut")
 
 pepperoni = Ingredient.create!(name: "pepperoni", calories: 100)
+friedChicken = Ingredient.create!(name: "fried chicken", calories: 200)
+cheese = Ingredient.create!(name: "Cheese", calories: 50)
