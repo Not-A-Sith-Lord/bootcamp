@@ -21,15 +21,14 @@ $(document).ready(function(){
 
 });
 
+// ==============================================
+// ==============================================
+// ==============================================
 
 function AddIngredient(event){
-
 	var ingredient_id = ($(this).data("name"));
-	
-
 	var id = ($(".id").data("id"));
 	// console.log(id);
-
 	$.ajax({
 		type: "POST",
 		url:` /api/sandwiches/${id}/ingredients/add`,
@@ -37,32 +36,32 @@ function AddIngredient(event){
 		success: Added,
 		error: handleError,
 	});
-
 };
+
+// =========
+
+function Added(apiResponse){
+	console.log("success");
+	console.log(apiResponse);
+
+	var content = apiResponse.ingredients[apiResponse.ingredients.length - 1].name;
+
+	var calories = apiResponse.ingredients[apiResponse.ingredients.length - 1].calories;
+	currentCalories = calories + currentCalories;
+
+	$(".calories").html(currentCalories);	
+	$(".ingredient_list").append(`<li>${content}</li>`);
+}
+
+// =========
 
 function handleError(apiError){
 	console.log("there was an error");
 	console.log(apiError.responseText)
 }
 
-
-function Added(apiResponse){
-	console.log("success");
-	console.log(apiResponse);
-	var content = apiResponse.ingredients[apiResponse.ingredients.length - 1].name;
-
-	var calories = apiResponse.ingredients[apiResponse.ingredients.length - 1].calories;
-	currentCalories = calories + currentCalories;
-
-
-	$(".calories").html(currentCalories);	
-
-	$(".ingredient_list").append(`<li>${content}</li>`);
-
-	
-}
-
-
+// ==============================================
+// ==============================================
 
 
 

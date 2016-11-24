@@ -2,26 +2,30 @@
 
 <%= @sandwich.name %><br>
 <%= @sandwich.bread_type %><br>
-<span class="calories" data-calories="<%= @sandwich.total_calories%>">  <%= @sandwich.total_calories%>   </span><br>
-<span class="id" data-id="<%= @sandwich.id %>"><%= @sandwich.id %></span><br>
+<span class="calories" data-calories="<%= @sandwich.total_calories%>">  
+	<%= @sandwich.total_calories%>  
+	</span><br>
+
+<span class="id" data-id="<%= @sandwich.id %>">
+	<%= @sandwich.id %></span><br>
+
+<!-- =========================================================== -->
 
 <p> ingredients </p>
 
 <ul class="ingredient_list">
-<% @sandwich.ingredients.each do |ingredient|%>
-<li><%= ingredient.name %></li><br>
-<%end%>
+	<% @sandwich.ingredients.each do |ingredient|%>
+	<li><%= ingredient.name %></li><br>
+	<%end%>
 </ul>
 
+<!-- =========================================================== -->
 
 <h3> all possible ingredients </h3>
 <% @ingredients.each do |stuff|%>
 
 
-<button class="js-add-ingredient" data-actualName="<%= stuff.name%>" data-name="<%= stuff.id %>"><%= stuff.name%>
-	
+<button class="js-add-ingredient" data-name="<%= stuff.id %>"><%= stuff.name%>
 </button><br>
-
-
 
 <% end %>

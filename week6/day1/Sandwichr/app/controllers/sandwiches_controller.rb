@@ -41,6 +41,8 @@ class SandwichesController < ApplicationController
 		render json: bacon.to_json( include: :ingredients)
 	end
 
+# =================
+
 	private
 
 	def sandwich_params

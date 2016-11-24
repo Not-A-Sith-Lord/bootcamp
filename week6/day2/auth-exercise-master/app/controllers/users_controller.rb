@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
 
+before_action :check_if_logged_in, only: [:show, :index]
+before_action :check_if_admin, only: [:index]
+before_action :get_current_user, only: [:home, :show]
+
   # renders the home page
 def home
 
-  get_current_user
+  # get_current_user
   render :home
 
   # @current_user = User.find_by(id: session[:user_id])
@@ -20,12 +24,22 @@ def home
 end
 
   def index
-    if session[:user_id]
+    # get_current_user
+
+    # if session[:user_id] && @current_user.role == "admin"
     @users = User.all
       render :index
-    else
-      redirect_to '/login'
-    end
+
+    # elsif session[:user_id]
+    #   flash[:admin_only] = "only administrators can see the users"
+    #   redirect_to "/"
+    # end
+        
+    # else
+    #   flash[:need_to_login_message] = "You need to login to see the list of users page."
+    #   redirect_to '/login'
+    # end
+      
   end
 
   # renders the signup form
@@ -37,13 +51,22 @@ end
     end
   end
 
+
+
+
+
   def show
-    if session[:user_id]
-     get_current_user
-     render :show
-    else
-      redirect_to '/login'
-    end
+
+    # get_current_user
+    render :show
+
+    # if session[:user_id]
+    #  get_current_user
+    #  render :show
+    # else
+    #   flash[:need_to_login_message] = "You need to login to see the profile page."
+    #   redirect_to '/login'
+    # end
   end
 
   # receives form and creates a user from that data

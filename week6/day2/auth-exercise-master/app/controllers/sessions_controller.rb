@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
 
 	def new
 		if session[:user_id]
+			flash[:login_already] = "You have already logged in."
       		redirect_to '/'
     	else
     	    render :new
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
 			redirect_to '/login'
 		else
 			session[:user_id] = user_maybe.id 
+			flash[:login_success] = "You have logged in successfully."
 			redirect_to '/'
 		end
 	end

@@ -23,5 +23,27 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def check_if_logged_in 
+    if session[:user_id] == nil
+      flash[:need_to_login_message] = "You need to login to see the profile page."
+      redirect_to '/login'
+    end
+  end
+
+  def check_if_admin
+
+    check_if_logged_in
+    
+    if @current_user == nil
+      get_current_user
+    end
+
+    if @current_user && @current_user.role != "admin"
+      flash[:admin_only] = "only admins can see this"
+      redirect_to "/"
+    end
+
+  end
+
 
 end
